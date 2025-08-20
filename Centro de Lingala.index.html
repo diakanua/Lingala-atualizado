@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Lingala - Aprenda Lingala Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .modal { display: none; }
+        .modal.active { display: flex; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">🌍 Centro de Lingala</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-yellow-300 transition">Início</a>
+                    <a href="#about" class="hover:text-yellow-300 transition">Sobre Lingala</a>
+                    <a href="#lessons" class="hover:text-yellow-300 transition">Lições</a>
+                    <a href="#books" class="hover:text-yellow-300 transition">E-books</a>
+                    <a href="#testimonials" class="hover:text-yellow-300 transition">Depoimentos</a>
+                    <a href="#affiliate" class="hover:text-yellow-300 transition">Afiliados</a>
+                </div>
+                <div class="space-x-3">
+                    <button onclick="openModal('loginModal')" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">Login</button>
+                    <button onclick="openModal('registerModal')" class="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">Cliente</button>
+                    <button onclick="openModal('affiliateModal')" class="bg-yellow-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition">Afiliado</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6 fade-in">Aprenda Lingala de Forma Profissional</h1>
+            <p class="text-xl mb-8 fade-in">A língua mais falada na República Democrática do Congo</p>
+            <button onclick="scrollToSection('lessons')" class="bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition transform hover:scale-105">
+                Começar Agora - Grátis
+            </button>
+        </div>
+    </section>
+
+    <!-- About Lingala -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Sobre a Língua Lingala</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-600">Uma Língua Rica e Vibrante</h3>
+                    <p class="text-gray-600 mb-4">O Lingala é uma língua bantu falada por mais de 25 milhões de pessoas, principalmente na República Democrática do Congo e na República do Congo.</p>
+                    <p class="text-gray-600 mb-4">É a língua franca de Kinshasa e uma das línguas oficiais da RDC, essencial para negócios, cultura e comunicação diária.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>✅ Língua oficial da RDC</li>
+                        <li>✅ Falada por 25+ milhões de pessoas</li>
+                        <li>✅ Essencial para negócios na região</li>
+                        <li>✅ Rica tradição cultural e musical</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-400 to-blue-500 rounded-full w-64 h-64 mx-auto flex items-center justify-center text-white text-6xl">
+                        🗣️
+                    </div>
+                </div>
+            </div>
+
+            <!-- Countries with Lingala Presence -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8">
+                <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">🌍 Presença Mundial do Lingala</h3>
+                
+                <!-- African Countries -->
+                <div class="mb-12">
+                    <h4 class="text-2xl font-semibold mb-6 text-center text-purple-600">🌍 África</h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇨🇩</div>
+                            <h5 class="font-bold text-lg">Rep. Dem. Congo</h5>
+                            <p class="text-sm text-gray-600">Língua oficial e franca</p>
+                            <p class="text-xs text-purple-600">20+ milhões de falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇨🇬</div>
+                            <h5 class="font-bold text-lg">República do Congo</h5>
+                            <p class="text-sm text-gray-600">Língua nacional</p>
+                            <p class="text-xs text-purple-600">3+ milhões de falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇨🇫</div>
+                            <h5 class="font-bold text-lg">Rep. Centro-Africana</h5>
+                            <p class="text-sm text-gray-600">Comunidades fronteiriças</p>
+                            <p class="text-xs text-purple-600">500k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇦🇴</div>
+                            <h5 class="font-bold text-lg">Angola</h5>
+                            <p class="text-sm text-gray-600">Província de Cabinda</p>
+                            <p class="text-xs text-purple-600">300k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇨🇲</div>
+                            <h5 class="font-bold text-lg">Camarões</h5>
+                            <p class="text-sm text-gray-600">Região oriental</p>
+                            <p class="text-xs text-purple-600">200k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇿🇦</div>
+                            <h5 class="font-bold text-lg">África do Sul</h5>
+                            <p class="text-sm text-gray-600">Comunidade imigrante</p>
+                            <p class="text-xs text-purple-600">150k+ falantes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- European Countries -->
+                <div>
+                    <h4 class="text-2xl font-semibold mb-6 text-center text-purple-600">🇪🇺 Europa</h4>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇧🇪</div>
+                            <h5 class="font-bold text-lg">Bélgica</h5>
+                            <p class="text-sm text-gray-600">Comunidade congolesa</p>
+                            <p class="text-xs text-purple-600">80k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇫🇷</div>
+                            <h5 class="font-bold text-lg">França</h5>
+                            <p class="text-sm text-gray-600">Paris, Lyon, Marseille</p>
+                            <p class="text-xs text-purple-600">120k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇬🇧</div>
+                            <h5 class="font-bold text-lg">Reino Unido</h5>
+                            <p class="text-sm text-gray-600">Londres, Manchester</p>
+                            <p class="text-xs text-purple-600">60k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇩🇪</div>
+                            <h5 class="font-bold text-lg">Alemanha</h5>
+                            <p class="text-sm text-gray-600">Berlim, Colônia</p>
+                            <p class="text-xs text-purple-600">45k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇳🇱</div>
+                            <h5 class="font-bold text-lg">Holanda</h5>
+                            <p class="text-sm text-gray-600">Amsterdã, Roterdã</p>
+                            <p class="text-xs text-purple-600">35k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇮🇹</div>
+                            <h5 class="font-bold text-lg">Itália</h5>
+                            <p class="text-sm text-gray-600">Roma, Milão</p>
+                            <p class="text-xs text-purple-600">25k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇪🇸</div>
+                            <h5 class="font-bold text-lg">Espanha</h5>
+                            <p class="text-sm text-gray-600">Madrid, Barcelona</p>
+                            <p class="text-xs text-purple-600">20k+ falantes</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                            <div class="text-3xl mb-2">🇵🇹</div>
+                            <h5 class="font-bold text-lg">Portugal</h5>
+                            <p class="text-sm text-gray-600">Lisboa, Porto</p>
+                            <p class="text-xs text-purple-600">15k+ falantes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center bg-purple-100 rounded-lg p-6">
+                    <h5 class="text-xl font-bold text-purple-800 mb-2">📊 Total Mundial</h5>
+                    <p class="text-lg text-purple-700">Mais de <strong>25 milhões</strong> de falantes de Lingala em todo o mundo!</p>
+                    <p class="text-sm text-purple-600 mt-2">Uma das línguas africanas com maior presença internacional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Lessons -->
+    <section id="lessons" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Lições Gratuitas</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="text-4xl mb-4">👋</div>
+                    <h3 class="text-xl font-semibold mb-3">Lição 1: Cumprimentos</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p><strong>Mbote</strong> - Olá</p>
+                        <p><strong>Mbote na yo</strong> - Olá para você</p>
+                        <p><strong>Sango nini?</strong> - Como está?</p>
+                        <p><strong>Malamu</strong> - Bem</p>
+                    </div>
+                    <button onclick="openPracticeModal('lesson1')" class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition w-full">
+                        Praticar Agora
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🔢</div>
+                    <h3 class="text-xl font-semibold mb-3">Lição 2: Números</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p><strong>Moko</strong> - Um</p>
+                        <p><strong>Mibale</strong> - Dois</p>
+                        <p><strong>Misato</strong> - Três</p>
+                        <p><strong>Minei</strong> - Quatro</p>
+                    </div>
+                    <button onclick="openPracticeModal('lesson2')" class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition w-full">
+                        Praticar Agora
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                    <h3 class="text-xl font-semibold mb-3">Lição 3: Família</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p><strong>Tata</strong> - Pai</p>
+                        <p><strong>Mama</strong> - Mãe</p>
+                        <p><strong>Mwana</strong> - Criança</p>
+                        <p><strong>Ndeko</strong> - Irmão/Irmã</p>
+                    </div>
+                    <button onclick="openPracticeModal('lesson3')" class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition w-full">
+                        Praticar Agora
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Course Invitation -->
+            <div class="mt-16 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg p-8 max-w-4xl mx-auto text-center">
+                <div class="text-6xl mb-4">🎓</div>
+                <h3 class="text-3xl font-bold mb-4">Quer Aprofundar Seus Conhecimentos?</h3>
+                <p class="text-xl mb-6">Junte-se ao nosso curso completo de Lingala via WhatsApp com o Professor Diakanua Sebastião!</p>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-6">
+                    <p class="text-lg">✅ Formação online via WhatsApp</p>
+                    <p class="text-lg">✅ Aulas com Professor Diakanua Sebastião (experiente)</p>
+                    <p class="text-lg">✅ Exercícios personalizados</p>
+                    <p class="text-lg">✅ Suporte direto no WhatsApp</p>
+                </div>
+                <a href="https://wa.me/927370027" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-green-600 transition transform hover:scale-105 inline-block">
+                    📱 Inscrever-se via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-books Section -->
+    <section id="books" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">E-books Profissionais</h2>
+            
+            <!-- Combo Offer -->
+            <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-lg p-8 mb-12 max-w-4xl mx-auto text-center">
+                <div class="text-6xl mb-4">🔥</div>
+                <h3 class="text-3xl font-bold mb-4">OFERTA ESPECIAL - COMBO COMPLETO</h3>
+                <p class="text-xl mb-4">Gramática Lingala + Manual de Conversação</p>
+                <div class="flex justify-center items-center space-x-4 mb-6">
+                    <span class="text-2xl line-through opacity-75">10.000 Kz</span>
+                    <span class="text-4xl font-bold">8.000 Kz</span>
+                    <span class="bg-yellow-400 text-red-600 px-3 py-1 rounded-full font-bold">ECONOMIZE 2.000 Kz</span>
+                </div>
+                <button onclick="openModal('paymentModal')" data-book="Combo Completo" data-price="8000" class="bg-white text-red-500 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition transform hover:scale-105">
+                    COMPRAR COMBO AGORA
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-8 shadow-lg card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">📚</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Gramática Lingala</h3>
+                        <p class="text-gray-600 mt-2">Guia completo - 100 páginas</p>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li>✅ Estrutura gramatical completa</li>
+                        <li>✅ Conjugação de verbos</li>
+                        <li>✅ Formação de frases</li>
+                        <li>✅ Exercícios práticos</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-4">5.000 Kz</div>
+                        <button onclick="openModal('paymentModal')" data-book="Gramática Lingala" data-price="5000" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition w-full">
+                            Comprar Agora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-8 shadow-lg card-hover">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4">💬</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Manual de Conversação</h3>
+                        <p class="text-gray-600 mt-2">Diálogos práticos - 100 páginas</p>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li>✅ Conversações do dia a dia</li>
+                        <li>✅ Frases essenciais</li>
+                        <li>✅ Situações reais</li>
+                        <li>✅ Pronúncia guiada</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-600 mb-4">5.000 Kz</div>
+                        <button onclick="openModal('paymentModal')" data-book="Manual de Conversação" data-price="5000" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition w-full">
+                            Comprar Agora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">O Que Nossos Clientes Dizem</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            M
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Maria Santos</h4>
+                            <p class="text-sm text-gray-600">Cliente - E-book Gramática</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 italic">"Excelente material! O e-book de gramática é muito completo e bem explicado. Recebi rapidamente após o pagamento. Recomendo!"</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            J
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">João Mukendi</h4>
+                            <p class="text-sm text-gray-600">Cliente - Curso WhatsApp</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 italic">"O Professor Diakanua é muito experiente e paciente. As aulas via WhatsApp são práticas e eficazes. Já consigo conversar básico em Lingala!"</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Ana Kiala</h4>
+                            <p class="text-sm text-gray-600">Cliente - Combo Completo</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 italic">"Comprei o combo e valeu muito a pena! Material de qualidade, entrega rápida e suporte excelente. Empresa séria e confiável."</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            P
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Pedro Nzuzi</h4>
+                            <p class="text-sm text-gray-600">Cliente - Manual Conversação</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 italic">"Muito bom para quem quer aprender conversação prática. Os diálogos são do dia a dia e muito úteis. Pagamento seguro e entrega rápida."</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            L
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Luisa Mbala</h4>
+                            <p class="text-sm text-gray-600">Afiliada - Programa</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 italic">"Programa de afiliados transparente e pagamentos em dia. Já recebi várias comissões. Centro de Lingala é uma empresa séria para trabalhar."</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            C
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800">Carlos Mputu</h4>
+                            <p class="text-sm text-gray-600">Cliente - Lições Gratuitas</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 italic">"Comecei com as lições gratuitas e fiquei impressionado com a qualidade. Empresa confiável que realmente ensina Lingala de forma profissional."</p>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg p-8 text-center">
+                <h3 class="text-3xl font-bold mb-6">🏆 Nossa Credibilidade</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div>
+                        <div class="text-4xl font-bold">500+</div>
+                        <p class="text-lg">Clientes Satisfeitos</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold">98%</div>
+                        <p class="text-lg">Taxa de Satisfação</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold">24h</div>
+                        <p class="text-lg">Entrega Garantida</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold">50+</div>
+                        <p class="text-lg">Afiliados Ativos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Program -->
+    <section id="affiliate" class="py-16 bg-gradient-to-r from-yellow-400 to-orange-500 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Programa de Afiliados</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold mb-4">1.000 Kz por Venda</h3>
+                    <p>Ganhe comissão por cada e-book vendido através do seu link</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-4">Saque Mínimo</h3>
+                    <p>Retire seus ganhos a partir de 3.000 Kz acumulados</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-4">Fácil de Começar</h3>
+                    <p>Cadastre-se gratuitamente e comece a ganhar hoje mesmo</p>
+                </div>
+            </div>
+            <div class="text-center mt-12 space-x-4">
+                <button onclick="openModal('affiliateModal')" class="bg-white text-orange-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    Tornar-se Afiliado
+                </button>
+                <button onclick="openModal('affiliateListModal')" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105">
+                    Ver Lista de Afiliados
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌍 Centro de Lingala</h3>
+                    <p class="text-gray-400">Sua plataforma profissional para aprender Lingala online.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">Sobre Lingala</a></li>
+                        <li><a href="#lessons" class="hover:text-white transition">Lições Gratuitas</a></li>
+                        <li><a href="#books" class="hover:text-white transition">E-books</a></li>
+                        <li><a href="#affiliate" class="hover:text-white transition">Afiliados</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <p class="text-gray-400">📧 diakanuatex@gmail.com</p>
+                    <p class="text-gray-400">📞 927370027 / 957570114</p>
+                    <p class="text-gray-400 text-sm mt-2">Contactos de apoio</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Centro de Lingala. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-6 text-center">Login</h3>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Senha</label>
+                    <input type="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                    Entrar
+                </button>
+            </form>
+            <button onclick="closeModal('loginModal')" class="mt-4 w-full text-gray-500 hover:text-gray-700">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-6 text-center">Cadastro de Cliente</h3>
+            <form id="registerForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Nome Completo</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Telefone</label>
+                    <input type="tel" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Senha</label>
+                    <input type="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                    Cadastrar
+                </button>
+            </form>
+            <button onclick="closeModal('registerModal')" class="mt-4 w-full text-gray-500 hover:text-gray-700">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Affiliate Modal -->
+    <div id="affiliateModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-6 text-center">Cadastro de Afiliado</h3>
+            <form id="affiliateForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Nome Completo</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-orange-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-orange-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Telefone</label>
+                    <input type="tel" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-orange-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Como pretende divulgar?</label>
+                    <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-orange-500" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="redes-sociais">Redes Sociais</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="blog">Blog/Website</option>
+                        <option value="presencial">Indicação Presencial</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Senha</label>
+                    <input type="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-orange-500" required>
+                </div>
+                <button type="submit" class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                    Cadastrar como Afiliado
+                </button>
+            </form>
+            <button onclick="closeModal('affiliateModal')" class="mt-4 w-full text-gray-500 hover:text-gray-700">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Practice Modal -->
+    <div id="practiceModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <h3 id="practiceTitle" class="text-2xl font-bold mb-6 text-center">Prática de Lingala</h3>
+            <div id="practiceContent" class="space-y-4">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            
+            <!-- Course invitation after practice -->
+            <div class="mt-8 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg p-6 text-center">
+                <h4 class="text-xl font-bold mb-3">🎓 Gostou da lição?</h4>
+                <p class="mb-4">Aprofunde seus conhecimentos no nosso curso completo via WhatsApp com o Professor Diakanua Sebastião, experiente em ensino de Lingala!</p>
+                <a href="https://wa.me/927370027" target="_blank" class="bg-white text-green-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition inline-block">
+                    📱 Inscrever-se Agora
+                </a>
+            </div>
+            
+            <button onclick="closeModal('practiceModal')" class="mt-6 w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <!-- Affiliate List Modal -->
+    <div id="affiliateListModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-6 text-center">📋 Lista de Afiliados Ativos</h3>
+            
+            <!-- Search and Filter -->
+            <div class="mb-6 flex flex-col md:flex-row gap-4">
+                <input type="text" id="affiliateSearch" placeholder="Buscar por nome ou email..." class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:border-orange-500">
+                <select id="affiliateFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:border-orange-500">
+                    <option value="">Todos os Status</option>
+                    <option value="ativo">Ativos</option>
+                    <option value="inativo">Inativos</option>
+                    <option value="destaque">Destaques</option>
+                </select>
+            </div>
+
+            <!-- Affiliates Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white border border-gray-200 rounded-lg">
+                    <thead class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white">
+                        <tr>
+                            <th class="px-4 py-3 text-left">Nome</th>
+                            <th class="px-4 py-3 text-left">Email</th>
+                            <th class="px-4 py-3 text-left">Telefone</th>
+                            <th class="px-4 py-3 text-left">Método</th>
+                            <th class="px-4 py-3 text-left">Vendas</th>
+                            <th class="px-4 py-3 text-left">Comissão</th>
+                            <th class="px-4 py-3 text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="affiliateTableBody">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Ana Silva</td>
+                            <td class="px-4 py-3">ana.silva@email.com</td>
+                            <td class="px-4 py-3">923456789</td>
+                            <td class="px-4 py-3">Redes Sociais</td>
+                            <td class="px-4 py-3 text-center">15</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">15.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Destaque</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">João Mukendi</td>
+                            <td class="px-4 py-3">joao.mukendi@email.com</td>
+                            <td class="px-4 py-3">934567890</td>
+                            <td class="px-4 py-3">WhatsApp</td>
+                            <td class="px-4 py-3 text-center">12</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">12.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Ativo</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Maria Santos</td>
+                            <td class="px-4 py-3">maria.santos@email.com</td>
+                            <td class="px-4 py-3">945678901</td>
+                            <td class="px-4 py-3">Blog/Website</td>
+                            <td class="px-4 py-3 text-center">8</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">8.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Ativo</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Pedro Nzuzi</td>
+                            <td class="px-4 py-3">pedro.nzuzi@email.com</td>
+                            <td class="px-4 py-3">956789012</td>
+                            <td class="px-4 py-3">Indicação Presencial</td>
+                            <td class="px-4 py-3 text-center">6</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">6.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Ativo</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Luisa Mbala</td>
+                            <td class="px-4 py-3">luisa.mbala@email.com</td>
+                            <td class="px-4 py-3">967890123</td>
+                            <td class="px-4 py-3">Redes Sociais</td>
+                            <td class="px-4 py-3 text-center">10</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">10.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Destaque</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Carlos Mputu</td>
+                            <td class="px-4 py-3">carlos.mputu@email.com</td>
+                            <td class="px-4 py-3">978901234</td>
+                            <td class="px-4 py-3">WhatsApp</td>
+                            <td class="px-4 py-3 text-center">4</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">4.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Ativo</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Rita Kiala</td>
+                            <td class="px-4 py-3">rita.kiala@email.com</td>
+                            <td class="px-4 py-3">989012345</td>
+                            <td class="px-4 py-3">Blog/Website</td>
+                            <td class="px-4 py-3 text-center">7</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">7.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Ativo</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-3 font-semibold">Miguel Tshala</td>
+                            <td class="px-4 py-3">miguel.tshala@email.com</td>
+                            <td class="px-4 py-3">990123456</td>
+                            <td class="px-4 py-3">Indicação Presencial</td>
+                            <td class="px-4 py-3 text-center">3</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">3.000 Kz</td>
+                            <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Novo</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary Stats -->
+            <div class="mt-6 grid md:grid-cols-4 gap-4">
+                <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">8</div>
+                    <div class="text-sm">Total Afiliados</div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">65</div>
+                    <div class="text-sm">Total Vendas</div>
+                </div>
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">65.000 Kz</div>
+                    <div class="text-sm">Comissões Pagas</div>
+                </div>
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">8.125 Kz</div>
+                    <div class="text-sm">Média por Afiliado</div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600 mb-4">Quer fazer parte desta equipe de sucesso?</p>
+                <button onclick="closeModal('affiliateListModal'); openModal('affiliateModal')" class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition">
+                    Tornar-se Afiliado
+                </button>
+            </div>
+            
+            <button onclick="closeModal('affiliateListModal')" class="mt-4 w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-lg w-full mx-4">
+            <h3 class="text-2xl font-bold mb-6 text-center">Finalizar Compra</h3>
+            <div id="selectedBook" class="bg-gray-100 p-4 rounded-lg mb-6 text-center">
+                <h4 class="font-semibold text-lg">Produto Selecionado</h4>
+                <p id="bookName" class="text-gray-600"></p>
+                <p id="bookPrice" class="text-2xl font-bold text-purple-600">5.000 Kz</p>
+            </div>
+            
+            <form id="paymentForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Nome Completo</label>
+                    <input type="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Método de Pagamento</label>
+                    <select id="paymentMethod" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500" required>
+                        <option value="">Selecione o método</option>
+                        <option value="iban">IBAN</option>
+                        <option value="express">Express</option>
+                        <option value="redotpay">Redotpay</option>
+                        <option value="wise">Wise</option>
+                    </select>
+                </div>
+                
+                <div id="paymentDetails" class="mb-6 p-4 bg-blue-50 rounded-lg" style="display: none;">
+                    <h5 class="font-semibold mb-2">Dados para Pagamento:</h5>
+                    <div id="paymentInfo"></div>
+                    <p class="text-sm text-gray-600 mt-2">Após o pagamento, envie o comprovante para confirmação.</p>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Comprovante de Pagamento</label>
+                    <input type="file" accept="image/*,.pdf" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-purple-500">
+                    <p class="text-xs text-gray-500 mt-1">Envie uma foto ou PDF do comprovante</p>
+                </div>
+                
+                <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <h5 class="font-semibold text-green-800 mb-2">📧 Recebimento do E-book</h5>
+                    <p class="text-sm text-green-700">Após a confirmação do seu pagamento, você receberá o(s) e-book(s) no email cadastrado em até 24 horas.</p>
+                </div>
+                
+                <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                    Confirmar Compra
+                </button>
+            </form>
+            <button onclick="closeModal('paymentModal')" class="mt-4 w-full text-gray-500 hover:text-gray-700">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Practice lessons data
+        const practiceData = {
+            lesson1: {
+                title: "Prática: Cumprimentos",
+                phrases: [
+                    { lingala: "Mbote na yo", portuguese: "Olá para você", pronunciation: "mm-BO-teh na yo" },
+                    { lingala: "Sango nini na yo?", portuguese: "Como você está?", pronunciation: "SAHN-go nee-nee na yo" },
+                    { lingala: "Nazali malamu", portuguese: "Eu estou bem", pronunciation: "na-ZAH-lee mah-LAH-moo" },
+                    { lingala: "Matondo mingi", portuguese: "Muito obrigado", pronunciation: "mah-TOHN-do MEEN-ghee" },
+                    { lingala: "Tikala malamu", portuguese: "Fique bem (despedida)", pronunciation: "tee-KAH-lah mah-LAH-moo" }
+                ]
+            },
+            lesson2: {
+                title: "Prática: Números",
+                phrases: [
+                    { lingala: "Nazali na mbongo moko", portuguese: "Eu tenho um dinheiro", pronunciation: "na-ZAH-lee na mm-BOHN-go MO-ko" },
+                    { lingala: "Napesi yo mbongo mibale", portuguese: "Eu te dou dois dinheiros", pronunciation: "na-PEH-see yo mm-BOHN-go mee-BAH-leh" },
+                    { lingala: "Tosombi biloko misato", portuguese: "Nós compramos três coisas", pronunciation: "to-SOHM-bee bee-LO-ko mee-SAH-to" },
+                    { lingala: "Bana minei bazali koleka", portuguese: "Quatro crianças estão passando", pronunciation: "BAH-na mee-NEH-ee ba-ZAH-lee ko-LEH-kah" },
+                    { lingala: "Nakomi mibu mitano", portuguese: "Eu completei cinco anos", pronunciation: "na-KO-mee MEE-boo mee-TAH-no" }
+                ]
+            },
+            lesson3: {
+                title: "Prática: Família",
+                phrases: [
+                    { lingala: "Tata na ngai azali na ndako", portuguese: "Meu pai está em casa", pronunciation: "TAH-tah na nn-GAH-ee ah-ZAH-lee na nn-DAH-ko" },
+                    { lingala: "Mama azali kolamba", portuguese: "A mãe está cozinhando", pronunciation: "MAH-mah ah-ZAH-lee ko-LAHM-bah" },
+                    { lingala: "Mwana azali kolela", portuguese: "A criança está chorando", pronunciation: "mm-WAH-nah ah-ZAH-lee ko-LEH-lah" },
+                    { lingala: "Ndeko na ngai azali na mosala", portuguese: "Meu irmão está no trabalho", pronunciation: "nn-DEH-ko na nn-GAH-ee ah-ZAH-lee na mo-SAH-lah" },
+                    { lingala: "Libota na biso ezali monene", portuguese: "Nossa família é grande", pronunciation: "lee-BO-tah na BEE-so eh-ZAH-lee mo-NEH-neh" }
+                ]
+            }
+        };
+
+        // Open practice modal
+        function openPracticeModal(lessonId) {
+            const lesson = practiceData[lessonId];
+            if (!lesson) return;
+
+            document.getElementById('practiceTitle').textContent = lesson.title;
+            
+            const content = document.getElementById('practiceContent');
+            content.innerHTML = lesson.phrases.map((phrase, index) => `
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border border-purple-200">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold text-purple-700">${phrase.lingala}</p>
+                            <p class="text-gray-600 mt-1">${phrase.portuguese}</p>
+                            <p class="text-sm text-blue-600 mt-1 italic">Pronúncia: ${phrase.pronunciation}</p>
+                        </div>
+                        <button onclick="playAudio('${phrase.lingala}')" class="ml-4 bg-purple-600 text-white p-2 rounded-full hover:bg-purple-700 transition flex-shrink-0" title="Ouvir pronúncia">
+                            🔊
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            openModal('practiceModal');
+        }
+
+        // Audio function (simulated - in real app would use text-to-speech or audio files)
+        function playAudio(text) {
+            // Note: This is a demo function. In a real application, you would:
+            // 1. Use Web Speech API for text-to-speech
+            // 2. Or play pre-recorded audio files
+            // 3. Or integrate with a TTS service
+            
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ln'; // Lingala language code
+                utterance.rate = 0.8; // Slower speech rate for learning
+                speechSynthesis.speak(utterance);
+            } else {
+                alert(`🔊 Pronúncia: "${text}"\n\n(Função de áudio não disponível neste navegador. Em uma versão completa, você ouviria a pronúncia correta.)`);
+            }
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Payment method details
+        const paymentMethods = {
+            iban: {
+                title: "IBAN",
+                details: "IBAN: 0040.0000.31350.1731.0181<br>Nome: Diakanua Sebastião"
+            },
+            express: {
+                title: "Express",
+                details: "Número: 927370027"
+            },
+            redotpay: {
+                title: "Redotpay",
+                details: "Número: 1070788565"
+            },
+            wise: {
+                title: "Wise",
+                details: "Email: diakanuatex@gmail.com"
+            }
+        };
+
+        // Handle payment method selection
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            const method = this.value;
+            const detailsDiv = document.getElementById('paymentDetails');
+            const infoDiv = document.getElementById('paymentInfo');
+            
+            if (method && paymentMethods[method]) {
+                infoDiv.innerHTML = `<strong>${paymentMethods[method].title}:</strong><br>${paymentMethods[method].details}`;
+                detailsDiv.style.display = 'block';
+            } else {
+                detailsDiv.style.display = 'none';
+            }
+        });
+
+        // Handle book selection for payment
+        document.querySelectorAll('[data-book]').forEach(button => {
+            button.addEventListener('click', function() {
+                const bookName = this.getAttribute('data-book');
+                const price = this.getAttribute('data-price');
+                document.getElementById('bookName').textContent = bookName;
+                document.getElementById('bookPrice').textContent = price + ' Kz';
+            });
+        });
+
+        // Form submissions
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login realizado com sucesso! (Demo)');
+            closeModal('loginModal');
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cadastro realizado com sucesso! Bem-vindo ao Centro de Lingala!');
+            closeModal('registerModal');
+        });
+
+        document.getElementById('affiliateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            const method = this.querySelector('select').value;
+            
+            // Validate required fields
+            if (!name || !email || !phone || !method) {
+                alert('❌ Por favor, preencha todos os campos obrigatórios!');
+                return;
+            }
+            
+            // Success message with detailed info
+            alert(`✅ Cadastro de Afiliado Realizado com Sucesso!\n\n👤 Nome: ${name}\n📧 Email: ${email}\n📞 Telefone: ${phone}\n📢 Método de Divulgação: ${method}\n\n🎯 Próximos Passos:\n1. Seu link de afiliado será enviado por email em até 24h\n2. Você ganhará 1.000 Kz por cada venda\n3. Saque mínimo: 3.000 Kz\n4. Acompanhe suas vendas pelo painel do afiliado\n\n💰 Comece a ganhar hoje mesmo!\nCompartilhe nossos e-books e ganhe comissão por cada venda.\n\nBem-vindo ao programa de afiliados do Centro de Lingala!`);
+            
+            closeModal('affiliateModal');
+            
+            // Reset form
+            this.reset();
+        });
+
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const bookName = document.getElementById('bookName').textContent;
+            const bookPrice = document.getElementById('bookPrice').textContent;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const customerEmail = this.querySelector('input[type="email"]').value;
+            
+            alert(`✅ Compra Registrada com Sucesso!\n\n📚 Produto: ${bookName}\n💰 Valor: ${bookPrice}\n💳 Método: ${paymentMethods[paymentMethod].title}\n📧 Email: ${customerEmail}\n\n🎯 Próximos Passos:\n1. Aguarde a confirmação do pagamento\n2. Você receberá o(s) e-book(s) em até 24h\n3. Verifique sua caixa de entrada e spam\n\n🎓 BÔNUS: Quer aprender ainda mais?\nJunte-se ao nosso curso completo via WhatsApp:\nhttps://wa.me/927370027\n\nObrigado pela sua compra!`);
+            closeModal('paymentModal');
+        });
+
+        // Affiliate search and filter functionality
+        document.getElementById('affiliateSearch').addEventListener('input', function() {
+            filterAffiliates();
+        });
+
+        document.getElementById('affiliateFilter').addEventListener('change', function() {
+            filterAffiliates();
+        });
+
+        function filterAffiliates() {
+            const searchTerm = document.getElementById('affiliateSearch').value.toLowerCase();
+            const filterValue = document.getElementById('affiliateFilter').value.toLowerCase();
+            const rows = document.querySelectorAll('#affiliateTableBody tr');
+
+            rows.forEach(row => {
+                const name = row.cells[0].textContent.toLowerCase();
+                const email = row.cells[1].textContent.toLowerCase();
+                const status = row.cells[6].textContent.toLowerCase();
+
+                const matchesSearch = name.includes(searchTerm) || email.includes(searchTerm);
+                const matchesFilter = !filterValue || status.includes(filterValue);
+
+                if (matchesSearch && matchesFilter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Close modals when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9722c63f42ae77da',t:'MTc1NTcwMjE3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
